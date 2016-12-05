@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    
+    <meta charset="UTF-8">
+    <title> College Matcher </title>
+    
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/css/bootstrap-select.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.1/js/bootstrap-select.min.js"></script>
+    <script src="myscript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.5.3/bootstrap-slider.min.js"></script>
+    
+</head>
+
+    
+<body>
+
+    <div id="startAnimation">
+        
+        <div id="crystal">
+            
+            <div id="quoteContainer">
+                <p></p>
+                <p id="quoteGenius"></p>
+			</div>
+			
+			<div id="buttonContainer">
+				<a href="#" id="quoteButton"> <i class="icon ion-ios-arrow-thin-right"></i></a>
+            </div>
+
+
+        </div>
+        
+    </div>
+    
+    <div id="home">
+        
+        <div id="bg">
+        <h1>Welcome to College Matcher!</h1>
+        
+        <br><br>
+
+        <div id="form">
+            <form id="matchForm">
+
+                <div class="form-group row">
+                    <label for="major" class="col-sm-4 col-form-label">Major of Interest</label>
+                    <div class="col-sm-4">
+                    <select class="selectpicker" data-live-search="true" title="Choose one" id="major">
+                        <option>Agriculture</option>
+                        <option>Agriculture Operations and Related Sciences</option>
+                        <option>Architecture and Related Services </option>
+                        <option data-tokens="culture">Area Ethnic, Cultural, Gender, and Group Studies</option>
+                        <option data-tokens="air">Aviation</option>
+                        <option>Biological and Biomedical Sciences</option>
+                        <option data-tokens="finance">Business, Management, Marketing, and Related Support Services</option>
+                        <option>Communication, Journalism, and Related Programs</option>
+                        <option>Communications Technologies/technicians and Support Services</option>
+                        <option>Computer and Information Sciences and Support Services</option>
+                        <option>Construction Trades</option>
+                        <option data-tokens="teaching">Education</option>
+                        <option>Engineering Technologies and Engineering-Related Fields</option>
+                        <option>Engineering</option>
+                        <option>English Language and Literature/letters</option>
+                        <option>Family and Consumer Sciences/Human Sciences</option>
+                        <option>Foreign Languages, Literatures, and Linguistics</option>
+                        <option data-tokens="pre-med">Health Professions and Related Programs</option>
+                        <option>History</option>
+                        <option>Homeland Security, Law Enforcement, Firefighting</option>
+                        <option data-tokens="hr">Human Services</option>
+                        <option>Legal Professions and Studies</option>
+                        <option>Liberal Arts and Sciences Studies and Humanities</option>
+                        <option>Library Science</option>
+                        <option>Mathematics and Statistics</option>
+                        <option>Mechanic and Repair Technologies/technicians</option>
+                        <option>Military Technologies and Applied Sciences</option>
+                        <option>Multi/interdisciplinary Studies</option>
+                        <option>Natural Resources and Conservation</option>
+                        <option>Parks, Recreation, Leisure, and Fitness Studies</option>
+                        <option>Personal and Culinary Services</option>
+                        <option>Philosophy and Religious Studies</option>
+                        <option>Physical Sciences</option>
+                        <option>Precision Production</option>
+                        <option>Psychology</option>
+                        <option>Science Technologies/technicians</option>
+                        <option>Social Sciences</option>
+                        <option>Theology and Religious Vocations</option>
+                        <option>Transportation and Materials Moving</option>
+                        <option data-tokens="theater">Visual and Performing Arts</option>
+                    </select>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="pref-state" class="col-sm-4 col-form-label">Preferred State</label>
+                    <div class="col-sm-4">
+                        <select class="selectpicker" data-live-search="true" title="Choose one" id="pref-state">
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>Arizona </option>
+                            <option>Arkansas </option>
+                            <option>California </option>
+                            <option>Colorado </option>
+                            <option>Connecticut </option>
+                            <option>Delaware </option>
+                            <option>Florida </option>
+                            <option>Georgia </option>
+                            <option>Hawaii </option>
+                            <option>Idaho </option>
+                            <option>Illinois </option>
+                            <option>Indiana </option>
+                            <option>Iowa </option>
+                            <option>Kansas </option>
+                            <option>Kentucky </option>
+                            <option>Louisiana </option>
+                            <option>Maine </option>
+                            <option>Maryland </option>
+                            <option>Massachusetts </option>
+                            <option>Michigan </option>
+                            <option>Minnesota </option>
+                            <option>Mississippi </option>
+                            <option>Missouri </option>
+                            <option>Montana</option>
+                            <option>Nebraska </option>
+                            <option>Nevada </option>
+                            <option>New Hampshire </option>
+                            <option>New Jersey </option>
+                            <option>New Mexico </option>
+                            <option>New York </option>
+                            <option>North Carolina </option>
+                            <option>North Dakota </option>
+                            <option>Ohio </option>
+                            <option>Oklahoma </option>
+                            <option>Oregon </option>
+                            <option>Pennsylvania</option>
+                            <option>Rhode Island </option>
+                            <option>South Carolina </option>
+                            <option>South Dakota </option>
+                            <option>Tennessee </option>
+                            <option>Texas </option>
+                            <option>Utah </option>
+                            <option>Vermont </option>
+                            <option>Virginia </option>
+                            <option>Washington </option>
+                            <option>West Virginia </option>
+                            <option>Wisconsin </option>
+                            <option>Wyoming</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="res-state" class="col-sm-4 col-form-label">State of Residence</label>
+                    <div class="col-sm-4">
+                        <select class="selectpicker" data-live-search="true" title="Choose one" id="res-state">
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>Arizona </option>
+                            <option>Arkansas </option>
+                            <option>California </option>
+                            <option>Colorado </option>
+                            <option>Connecticut </option>
+                            <option>Delaware </option>
+                            <option>Florida </option>
+                            <option>Georgia </option>
+                            <option>Hawaii </option>
+                            <option>Idaho </option>
+                            <option>Illinois </option>
+                            <option>Indiana </option>
+                            <option>Iowa </option>
+                            <option>Kansas </option>
+                            <option>Kentucky </option>
+                            <option>Louisiana </option>
+                            <option>Maine </option>
+                            <option>Maryland </option>
+                            <option>Massachusetts </option>
+                            <option>Michigan </option>
+                            <option>Minnesota </option>
+                            <option>Mississippi </option>
+                            <option>Missouri </option>
+                            <option>Montana</option>
+                            <option>Nebraska </option>
+                            <option>Nevada </option>
+                            <option>New Hampshire </option>
+                            <option>New Jersey </option>
+                            <option>New Mexico </option>
+                            <option>New York </option>
+                            <option>North Carolina </option>
+                            <option>North Dakota </option>
+                            <option>Ohio </option>
+                            <option>Oklahoma </option>
+                            <option>Oregon </option>
+                            <option>Pennsylvania</option>
+                            <option>Rhode Island </option>
+                            <option>South Carolina </option>
+                            <option>South Dakota </option>
+                            <option>Tennessee </option>
+                            <option>Texas </option>
+                            <option>Utah </option>
+                            <option>Vermont </option>
+                            <option>Virginia </option>
+                            <option>Washington </option>
+                            <option>West Virginia </option>
+                            <option>Wisconsin </option>
+                            <option>Wyoming</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Tuition Range (Yearly)</label> 
+                    <div class="col-sm-8">
+                        <b>$624</b> <input id="tuition" type="text" class="span2 form-control" value="" data-slider-id="range" data-slider-handle="round" data-slider-min="624" data-slider-max="70000" data-slider-step="5" data-slider-value="[6000,60000]"/> <b> $70,000 </b>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="personality" class="col-sm-4 col-form-label">
+                        <a href="https://www.16personalities.com/free-personality-test" target="_blank">Myers Briggs Personaltiy Type</a>
+                    </label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for=""
+                </div>
+
+            </form>
+        </div>
+        </div>
+    </div>
+
+</body>
+    
+</html>
