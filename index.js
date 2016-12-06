@@ -99,6 +99,6 @@ app.get('/personality',function(req,res){
 });
 
  
-app.listen(3000,'localhost', function() {
+app.listen(8080, function() {
     console.log('Express server started on port %s at %s', this.address().port, this.address().address);
 });
