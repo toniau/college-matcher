@@ -1,1 +1,0 @@
-var html = new EJS({url: 'result.ejs'}).render(data);
