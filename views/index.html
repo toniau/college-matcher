@@ -38,7 +38,7 @@
 			</div>
 			
 			<div id="buttonContainer">
-				<a href="#" id="quoteButton"> <i class="icon ion-ios-arrow-thin-right"></i></a>
+				<a href="#" id="quoteButton"> <i class="icon ion-ios-arrow-thin-right" style="color:#FFF;"></i></a>
             </div>
 
 
@@ -48,24 +48,29 @@
     
     <div id="home" class="background-3">
         
+        <div id="growTree">
+        </div>
+        
         <div id="welcome" class="card">
             <h1>Welcome to College Matcher</h1>
             
             <br><br>
             
-            <p><mark>Let us help you make one of the most important decisions of your life.</mark></p>
+            <p>Let us help you make one of the most important decisions of your life.</p>
             
             <br><br>
             
-            <a href="#" id="toForm"><i class="ion-ios-arrow-thin-right"></i></a>
+            <a href="#" id="toForm"><i class="icon ion-ios-arrow-thin-right"></i></a>
         </div>
 
-        <div id="form" class="card">
-            <form id="matchForm">
+        <div id="form" class="card2">
+            <h1>Matching Form</h1>
+            <br><br>
+            <form id="matchForm" action="/result" method="get">
 
                 <div class="form-group row">
                     <label for="major" class="col-sm-4 col-form-label">Major of Interest</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-8">
                     <select class="selectpicker" data-live-search="true" title="Choose one" id="major">
                         <option>Agriculture</option>
                         <option>Agriculture Operations and Related Sciences</option>
@@ -112,142 +117,157 @@
                 </div>
                 
                 <div class="form-group row">
-                    <label for="pref-state" class="col-sm-4 col-form-label">Preferred State</label>
-                    <div class="col-sm-4">
-                        <select class="selectpicker" data-live-search="true" title="Choose one" id="pref-state">
-                            <option>Alabama</option>
-                            <option>Alaska</option>
-                            <option>Arizona </option>
-                            <option>Arkansas </option>
-                            <option>California </option>
-                            <option>Colorado </option>
-                            <option>Connecticut </option>
-                            <option>Delaware </option>
-                            <option>Florida </option>
-                            <option>Georgia </option>
-                            <option>Hawaii </option>
-                            <option>Idaho </option>
-                            <option>Illinois </option>
-                            <option>Indiana </option>
-                            <option>Iowa </option>
-                            <option>Kansas </option>
-                            <option>Kentucky </option>
-                            <option>Louisiana </option>
-                            <option>Maine </option>
-                            <option>Maryland </option>
-                            <option>Massachusetts </option>
-                            <option>Michigan </option>
-                            <option>Minnesota </option>
-                            <option>Mississippi </option>
-                            <option>Missouri </option>
-                            <option>Montana</option>
-                            <option>Nebraska </option>
-                            <option>Nevada </option>
-                            <option>New Hampshire </option>
-                            <option>New Jersey </option>
-                            <option>New Mexico </option>
-                            <option>New York </option>
-                            <option>North Carolina </option>
-                            <option>North Dakota </option>
-                            <option>Ohio </option>
-                            <option>Oklahoma </option>
-                            <option>Oregon </option>
-                            <option>Pennsylvania</option>
-                            <option>Rhode Island </option>
-                            <option>South Carolina </option>
-                            <option>South Dakota </option>
-                            <option>Tennessee </option>
-                            <option>Texas </option>
-                            <option>Utah </option>
-                            <option>Vermont </option>
-                            <option>Virginia </option>
-                            <option>Washington </option>
-                            <option>West Virginia </option>
-                            <option>Wisconsin </option>
-                            <option>Wyoming</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group row">
-                    <label for="res-state" class="col-sm-4 col-form-label">State of Residence</label>
-                    <div class="col-sm-4">
-                        <select class="selectpicker" data-live-search="true" title="Choose one" id="res-state">
-                            <option>Alabama</option>
-                            <option>Alaska</option>
-                            <option>Arizona </option>
-                            <option>Arkansas </option>
-                            <option>California </option>
-                            <option>Colorado </option>
-                            <option>Connecticut </option>
-                            <option>Delaware </option>
-                            <option>Florida </option>
-                            <option>Georgia </option>
-                            <option>Hawaii </option>
-                            <option>Idaho </option>
-                            <option>Illinois </option>
-                            <option>Indiana </option>
-                            <option>Iowa </option>
-                            <option>Kansas </option>
-                            <option>Kentucky </option>
-                            <option>Louisiana </option>
-                            <option>Maine </option>
-                            <option>Maryland </option>
-                            <option>Massachusetts </option>
-                            <option>Michigan </option>
-                            <option>Minnesota </option>
-                            <option>Mississippi </option>
-                            <option>Missouri </option>
-                            <option>Montana</option>
-                            <option>Nebraska </option>
-                            <option>Nevada </option>
-                            <option>New Hampshire </option>
-                            <option>New Jersey </option>
-                            <option>New Mexico </option>
-                            <option>New York </option>
-                            <option>North Carolina </option>
-                            <option>North Dakota </option>
-                            <option>Ohio </option>
-                            <option>Oklahoma </option>
-                            <option>Oregon </option>
-                            <option>Pennsylvania</option>
-                            <option>Rhode Island </option>
-                            <option>South Carolina </option>
-                            <option>South Dakota </option>
-                            <option>Tennessee </option>
-                            <option>Texas </option>
-                            <option>Utah </option>
-                            <option>Vermont </option>
-                            <option>Virginia </option>
-                            <option>Washington </option>
-                            <option>West Virginia </option>
-                            <option>Wisconsin </option>
-                            <option>Wyoming</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="form-group row">
-                    <label class="col-sm-4 col-form-label">Tuition Range (Yearly)</label> 
+                    <label for="pref_state" class="col-sm-4 col-form-label">Preferred State</label>
                     <div class="col-sm-8">
-                        <b>$624</b> <input id="tuition" type="text" class="span2 form-control" value="" data-slider-id="range" data-slider-handle="round" data-slider-min="624" data-slider-max="70000" data-slider-step="5" data-slider-value="[6000,60000]"/> <b> $70,000 </b>
+                        <select class="selectpicker" data-live-search="true" title="Choose one" id="pref_state">
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>Arizona </option>
+                            <option>Arkansas </option>
+                            <option>California </option>
+                            <option>Colorado </option>
+                            <option>Connecticut </option>
+                            <option>Delaware </option>
+                            <option>Florida </option>
+                            <option>Georgia </option>
+                            <option>Hawaii </option>
+                            <option>Idaho </option>
+                            <option>Illinois </option>
+                            <option>Indiana </option>
+                            <option>Iowa </option>
+                            <option>Kansas </option>
+                            <option>Kentucky </option>
+                            <option>Louisiana </option>
+                            <option>Maine </option>
+                            <option>Maryland </option>
+                            <option>Massachusetts </option>
+                            <option>Michigan </option>
+                            <option>Minnesota </option>
+                            <option>Mississippi </option>
+                            <option>Missouri </option>
+                            <option>Montana</option>
+                            <option>Nebraska </option>
+                            <option>Nevada </option>
+                            <option>New Hampshire </option>
+                            <option>New Jersey </option>
+                            <option>New Mexico </option>
+                            <option>New York </option>
+                            <option>North Carolina </option>
+                            <option>North Dakota </option>
+                            <option>Ohio </option>
+                            <option>Oklahoma </option>
+                            <option>Oregon </option>
+                            <option>Pennsylvania</option>
+                            <option>Rhode Island </option>
+                            <option>South Carolina </option>
+                            <option>South Dakota </option>
+                            <option>Tennessee </option>
+                            <option>Texas </option>
+                            <option>Utah </option>
+                            <option>Vermont </option>
+                            <option>Virginia </option>
+                            <option>Washington </option>
+                            <option>West Virginia </option>
+                            <option>Wisconsin </option>
+                            <option>Wyoming</option>
+                        </select>
                     </div>
                 </div>
                 
+                <div class="form-group row">
+                    <label for="res_state" class="col-sm-4 col-form-label">State of Residence</label>
+                    <div class="col-sm-8">
+                        <select class="selectpicker" data-live-search="true" title="Choose one" id="res_state">
+                            <option>Alabama</option>
+                            <option>Alaska</option>
+                            <option>Arizona </option>
+                            <option>Arkansas </option>
+                            <option>California </option>
+                            <option>Colorado </option>
+                            <option>Connecticut </option>
+                            <option>Delaware </option>
+                            <option>Florida </option>
+                            <option>Georgia </option>
+                            <option>Hawaii </option>
+                            <option>Idaho </option>
+                            <option>Illinois </option>
+                            <option>Indiana </option>
+                            <option>Iowa </option>
+                            <option>Kansas </option>
+                            <option>Kentucky </option>
+                            <option>Louisiana </option>
+                            <option>Maine </option>
+                            <option>Maryland </option>
+                            <option>Massachusetts </option>
+                            <option>Michigan </option>
+                            <option>Minnesota </option>
+                            <option>Mississippi </option>
+                            <option>Missouri </option>
+                            <option>Montana</option>
+                            <option>Nebraska </option>
+                            <option>Nevada </option>
+                            <option>New Hampshire </option>
+                            <option>New Jersey </option>
+                            <option>New Mexico </option>
+                            <option>New York </option>
+                            <option>North Carolina </option>
+                            <option>North Dakota </option>
+                            <option>Ohio </option>
+                            <option>Oklahoma </option>
+                            <option>Oregon </option>
+                            <option>Pennsylvania</option>
+                            <option>Rhode Island </option>
+                            <option>South Carolina </option>
+                            <option>South Dakota </option>
+                            <option>Tennessee </option>
+                            <option>Texas </option>
+                            <option>Utah </option>
+                            <option>Vermont </option>
+                            <option>Virginia </option>
+                            <option>Washington </option>
+                            <option>West Virginia </option>
+                            <option>Wisconsin </option>
+                            <option>Wyoming</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label" for="tuition">Tuition Range (Yearly)</label> 
+                    <div class="col-sm-8">
+                        <b>$624</b> <input id="tuition" type="text" class="span2 form-control" value="" data-slider-id="range" data-slider-handle="round" data-slider-min="624" data-slider-max="70000" data-slider-step="5" data-slider-value="[10000,65000]"/> <b> $70,000 </b>
+                    </div>
+                </div>
+
                 <div class="form-group row">
                     <label for="personality" class="col-sm-4 col-form-label">
                         <a href="https://www.16personalities.com/free-personality-test" target="_blank">Myers Briggs Personaltiy Type</a>
                     </label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control">
+                    <div class="col-sm-8">
+                        <select class="selectpicker" data-live-search="true" title="Choose one" id="personality">
+                            <option>INFP</option>
+                            <option>INFJ</option>
+                            <option>INTJ</option>
+                            <option>INTP</option>
+                            <option>ISFJ</option>
+                            <option>ISFP</option>
+                            <option>ISTJ</option>
+                            <option>ISTP</option>
+                            <option>ENFJ</option>
+                            <option>ENFP</option>
+                            <option>ENTJ</option>
+                            <option>ENTP</option>
+                            <option>ESFJ</option>
+                            <option>ESTP</option>
+                            <option>ESTJ</option>
+                            <option>ESFP</option>
+                        </select>
                     </div>
                 </div>
+                                
+                <br><br>
                 
-                <div class="form-group row">
-                    <label for=""
-                </div>
-
-                <input type="submit" value="Submit">
+                <input type="submit" id="submitForm" value="Submit">
             </form>
         </div>
     </div>

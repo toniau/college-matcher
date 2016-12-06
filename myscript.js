@@ -115,13 +115,21 @@ $('#crystal').mouseenter(function(evt){
 
 $("#buttonContainer").click(function(){
     console.log("I clicked the arrow");
-    $("#startAnimation").hide("fast");
-    $("#home").show("fast");
+    $("#startAnimation").fadeOut("fast");
+    $("#home").fadeIn("slow");
+});
+    
+/*$("#toForm").hover(function(){
+    console.log("Tree gif should be running");
+    $("#growTree").fadeIn("slow");
+})*/
+    
+$("#toForm").click(function(){
+    console.log("Switched to form");
+    $("#welcome").fadeOut("fast");
+    $("#form").fadeIn("slow");
 });
     
 $("#tuition").slider({});
-    
-$()
-		
+    	
 });//end document ready
-

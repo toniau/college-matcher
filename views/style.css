@@ -99,10 +99,10 @@ body {
     height: 350px;
     width: 700px;
     padding: 10px;
-    top: 0;
-    left: 0;
-    margin-top: 175px;
-    margin-left: 350px;
+    top: 50%;
+    left: 50%;
+    margin-top: -175px;
+    margin-left: -350px;
     text-align: center;
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.8); 
@@ -112,21 +112,59 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 
+.card2 {
+    font-family: 'Raleway', sans-serif; 
+    height: 450px;
+    width: 700px;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -350px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.card2 h1{
+    font-family: 'Oswald', sans-serif;
+}
+
 #welcome {
-    display: block;
+    position: absolute;
 }
 
 #welcome p {
     font-size: 2em;
 }
 
+/*#growTree {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: url(tree.gif);
+    background-repeat: no-repeat;
+    z-index: 20;
+}*/
+
+#toForm{
+    display: inline-block;
+	margin-top: 20px;
+	color: #000;
+	font-weight: bold;
+	padding:5px;
+	text-decoration: none;
+    transform: scale(5);
+}
+
+#toForm:active{
+	cursor: pointer;
+}
+
 #form {
     display: none;
     position: absolute;
-    height: 100%;
-    width: 58%;
-    margin-left: 20%;
-    padding: 0 80px;
     background-color: whitesmoke;
     text-align: center;
 }
