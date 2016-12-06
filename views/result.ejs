@@ -1,0 +1,11 @@
+<ul>
+<%for (var result in results){%>
+  <li><%- JSON.stringify(results[result].instnm) %></li>    
+  		<ul>
+  		<li><%- JSON.stringify(results[result].pref_state) %></li>
+  		<li><%- JSON.stringify(results[result].tuition) %></li>
+  		</ul>
+  <%}%>
+</ul>
+
+
