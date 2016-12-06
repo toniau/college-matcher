@@ -49,6 +49,7 @@ body {
 	text-align: center;
     padding-right: 20px;
 }
+
 #quoteButton{
 	margin-top: 60px;
     margin-left: 10px;
@@ -58,12 +59,6 @@ body {
 	text-decoration: none;
     transform: scale(5);
 }
-
-/*#quoteButton:hover{
-	cursor:pointer;
-	background:#09c;
-	color: #fff;	
-}*/
 
 #quoteButton:active{
 	cursor: pointer;
@@ -86,17 +81,58 @@ body {
 
 #home {
     display: none;
-    height: 100% !important;
+    position: absolute;
+    height: 100%;
     width: 100%;
     top: 0;
+    z-index: 10;
 }
 
-h1 {
+.background-3 {
+ 
+ background-image: linear-gradient(#8b9da9, #fff6e4);
+ box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+}
+
+.card {
+    font-family: 'Raleway', sans-serif; 
+    height: 350px;
+    width: 700px;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    margin-top: 175px;
+    margin-left: 350px;
     text-align: center;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.card h1{
+    font-family: 'Oswald', sans-serif;
+}
+
+#welcome {
+    display: block;
+}
+
+#welcome p {
+    font-size: 2em;
 }
 
 #form {
-    margin-left: 32%;
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 58%;
+    margin-left: 20%;
+    padding: 0 80px;
+    background-color: whitesmoke;
+    text-align: center;
+}
+
+#matchForm {
+    text-align: center;
 }
 
 #range .slider-selection {

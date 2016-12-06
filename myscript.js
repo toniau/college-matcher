@@ -115,10 +115,13 @@ $('#crystal').mouseenter(function(evt){
 
 $("#buttonContainer").click(function(){
     console.log("I clicked the arrow");
-    $("#startAnimation").hide("slow");
-    $("#home").show("slow");
+    $("#startAnimation").hide("fast");
+    $("#home").show("fast");
 });
     
 $("#tuition").slider({});
+    
+$()
 		
 });//end document ready
+
