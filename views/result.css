@@ -3,11 +3,12 @@ body {
     background-color: #f5dd56;
 }
 
-#dbsux {
-    text-align: center;
+ul {
+    list-style-type: none;
 }
 
 button.accordion {
+    font-family: 'Oswald', sans-serif;
     background-color: #eee;
     color: #333;
     cursor: pointer;
