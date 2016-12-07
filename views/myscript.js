@@ -132,8 +132,9 @@ $('#crystal').mouseenter(function(evt){
             $("#personality").prop('disabled',true);
             document.getElementById("personality").style.cursor = none;
         } 
-        else if($("#pref_state").val() === "None") {
+        else if($("#pref_state").val() === "notavail") {
             $("#personality").prop('disable', false);
+            $("#pref_state").prop('disable', false);
             document.getElementById("personality").style.cursor = pointer;
         }
     });
@@ -143,8 +144,9 @@ $('#crystal').mouseenter(function(evt){
             $("#pref_state").prop('disabled',true);
             document.getElementById("pref_state").style.cursor = none;
         } 
-        else if($("#personality").val() === "None"){
+        else if($("#personality").val() === "notavail"){
             $("#pref_state").prop('disable', false);
+            $("#personality").prop('disable', false);
             document.getElementById("pref_state").style.cursor = pointer;
         }
     });
