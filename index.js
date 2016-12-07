@@ -19,6 +19,8 @@ app.get('/', function(req, res) {
 
 
 app.get('/result',function(req,res){
+
+
     var return_set  = [];
 
     var personality_type = req.query['personality'];
@@ -26,6 +28,28 @@ app.get('/result',function(req,res){
     console.log("PERSONALITY TYPE:" + req.query['personality']);
     console.log(typeof personality_type);
     console.log(personality_type);
+
+    console.log(req.query['major']);
+
+    var where_major, where_pref_state, where_res_state = '';
+    var complete_WHERE = '';
+
+
+    if(req.query['major'] != ''){
+        where_major = 'Program_Name LIKE "%' + req.query['major'] + '%"'
+        console.log(where_major);
+    }
+
+    if(req.query['pref_state'] != ''){
+        where_pref_state = 'Institution_State = "' + req.query['pref_state'] + '"'
+        console.log(where_pref_state);
+    }
+
+    if(req.query['res_state'] != ''){
+        where_res_state = 'Institution_State = "' + req.query['res_state'] + '"'
+        console.log(where_res_state);
+    }
+
 
     if(personality_type != ''){
 
@@ -39,6 +63,7 @@ app.get('/result',function(req,res){
                             pref_state: result[i].STABBR,
                             instate: result[i].INSTATE,
                             outstate: result[i].OUTSTATE,
+                            match_rate: result[i].MATCH_RATE,
                         });
             }
             res.render("result", {results: return_set});
@@ -49,25 +74,90 @@ app.get('/result',function(req,res){
 
     } else {
 
-        console.log("IT RAN THE ELSE STATEMENT");
+        var complete_WHERE = '';
 
-        db.query('SELECT INSTNM, STABBR, TUITION1 AS INSTATE, (TUITION3*1.5) AS OUTSTATE FROM HigherEducation3 INNER JOIN CollegeTuitions ON HigherEducation3.UNITID=CollegeTuitions.UNITID LIMIT 5;', function(err, result) {
-            for(var i=0; i < result.length; i++){
-                return_set.push(
-                        { 
-                            instnm: result[i].INSTNM, 
-                            pref_state: result[i].STABBR,
-                            instate: result[i].INSTATE,
-                            outstate: result[i].OUTSTATE,
-                        });
+        var this_query = 'SELECT a.Institution_Name as INSTNM, a.Institution_State as STABBR, TUITION1 AS INSTATE, (TUITION3*1.5) AS OUTSTATE FROM Accreditation2 a, CollegeTuitions b WHERE (a.Institution_IPEDS_UnitID=b.UNITID) '
+
+        if(req.query['major'] == ''){
+
+            if(req.query['pref_state'] != '' && (req.query['res_state'] != '')){
+
+                complete_WHERE = 'AND (' + where_pref_state + ' OR ' + where_res_state + ')';
+
+            }else if(req.query['res_state'] == ''){
+
+                complete_WHERE = 'AND (' + where_pref_state;
+
             }
-            //res.render("result", {results: return_set});
-            res.render("result", {results: return_set});
-            console.log({results: return_set});
-            if (err) throw err;
-        });
 
-    }
+            var complete_query = this_query + complete_WHERE + ' LIMIT 5;';
+            console.log(complete_query);
+
+            db.query(complete_query, function(err, result) {
+                for(var i=0; i < result.length; i++){
+                    return_set.push(
+                            { 
+                                instnm: result[i].INSTNM, 
+                                pref_state: result[i].STABBR,
+                                instate: result[i].INSTATE,
+                                outstate: result[i].OUTSTATE,
+                            });
+                }
+                //res.render("result", {results: return_set});
+                res.render("result", {results: return_set});
+                console.log({results: return_set});
+                if (err) throw err;
+            });
+
+
+        }else if(req.query['major'] != ''){
+
+            console.log("!!!!-------MAJOR NOT EMPTY----!!!");
+
+            console.log(typeof req.query['pref_state']);
+            console.log(typeof req.query['res_state']);
+
+            if(req.query['pref_state'] != '' && (req.query['res_state'] != '')){
+
+                complete_WHERE = 'AND (' + where_pref_state + ' OR ' + where_res_state + ') AND ' + where_major;
+
+            }else if(req.query['res_state'] == ''){
+
+                complete_WHERE = 'AND (' + where_pref_state + ') AND ' + where_major;
+
+            }else if(req.query['pref_state'] == ''){
+
+                complete_WHERE = where_major;
+                console.log("FUUUUUUUHHHHH DISSSS\n");
+                console.log(where_major);
+
+            }
+
+            var complete_query = this_query + complete_WHERE + ' LIMIT 5;';
+            console.log(complete_query);
+
+                db.query(complete_query, function(err, result) {
+                    for(var i=0; i < result.length; i++){
+                        return_set.push(
+                                { 
+                                    instnm: result[i].INSTNM, 
+                                    pref_state: result[i].STABBR,
+                                    instate: result[i].INSTATE,
+                                    outstate: result[i].OUTSTATE,
+                                });
+                    }
+                    //res.render("result", {results: return_set});
+                    res.render("result", {results: return_set});
+                    console.log({results: return_set});
+                    if (err) throw err;
+                });
+
+
+        }
+
+
+
+    } // else
 });
 
 
