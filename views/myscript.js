@@ -127,7 +127,7 @@ $('#crystal').mouseenter(function(evt){
 
     $("#tuition").slider({});
 
-    $("#pref_state").on('change', function(){
+    /*$("#pref_state").on('change', function(){
         if($("#personality").val() === ""){
             $("#personality").prop('disabled',true);
             document.getElementById("personality").style.cursor = none;
@@ -149,7 +149,7 @@ $('#crystal').mouseenter(function(evt){
             $("#personality").prop('disable', false);
             document.getElementById("pref_state").style.cursor = pointer;
         }
-    });
+    });*/
 
     $("#submitForm").click(function(){
         console.log("Switched to result");
