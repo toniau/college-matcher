@@ -18,24 +18,33 @@
     </head>
     
     <body>
-    
+
         <div id="dbsux">
             
             <h1>Here are your Top 5 Colleges based on your preferences!</h1>
-        
-            <% for (var result in results){ %>
-            
-                <button class="accordion"><%- JSON.stringify(results[result].instnm) %><i class="icon ion-plus-round plus"></i></button>
-                <div class="panel">
-                  <ul>
-                    <li>State: <%- JSON.stringify(results[result].pref_state) %></li>
-                    <li>Instate Tuition: <%- JSON.stringify(results[result].instate) %></li>
-                    <li>Out of State Tuition: <%- JSON.stringify(results[result].outstate) %></li>
-                  </ul>
-                </div>
-            
-            <% } %>
-            
+    
+                <% for (var result in results){ %>
+
+                    <button class="accordion"><%- JSON.stringify(results[result].instnm) %><i class="icon ion-plus-round plus"></i></button>
+                    <div class="panel">
+                        
+                        <table class="table">
+                            <tr>
+                                <th rowspan="3"><span style="color:#5555ec;"><%- JSON.stringify(results[result].match_rate * 10) %></span></th>
+                                <td>State: <%- JSON.stringify(results[result].pref_state) %></td>
+                            </tr>
+                            <tr>
+                                <td>Instate Tuition: $<%- JSON.stringify(results[result].instate) %></td>
+                            </tr>
+                            <tr>
+                                <td>Out of State Tuition: $<%- JSON.stringify(results[result].outstate) %></td>
+                            </tr>
+
+                        </table>
+                        
+                    </div>
+
+                <% } %>
         </div>
         
         <script>
