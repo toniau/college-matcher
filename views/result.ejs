@@ -3,6 +3,9 @@
     
     <head>
     
+        <meta charset="UTF-8">
+        <title>Your Colleges</title>
+        
         <!-- CSS -->
         <link href="result.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
@@ -15,23 +18,23 @@
     
     <body>
     
-        <div id="results">
+        <div id="dbsux">
             
             <h1>Here are your Top 5 Colleges based on your preferences!</h1>
-            
-            <p>pls work already</p>
         
-            <ul>
-                <%for (var result in results){%>
-                  <li><%- JSON.stringify(results[result].instnm) %></li>    
-                        <ul>
-                        <li><%- JSON.stringify(results[result].pref_state) %></li>
-                        <li>instate tuition: <%- JSON.stringify(results[result].instate) %></li>
-                        <li>out of state tuition: <%- JSON.stringify(results[result].outstate) %></li>
-                        </ul>
-                <%}%>
-            </ul>
-                  
+            <% for (var result in results){ %>
+            
+                <button class="accordion"><%- JSON.stringify(results[result].instnm) %></button>
+                <div class="panel">
+                  <ul>
+                    <li><%- JSON.stringify(results[result].pref_state) %></li>
+                    <li>instate tuition: <%- JSON.stringify(results[result].instate) %></li>
+                    <li>out of state tuition: <%- JSON.stringify(results[result].outstate) %></li>
+                  </ul>
+                </div>
+            
+            <% } %>
+            
         </div>
         
     </body>

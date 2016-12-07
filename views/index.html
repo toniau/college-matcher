@@ -45,14 +45,17 @@
         </div>
         
     </div>
-    
+        
     <div id="home" class="background-3">
+        
+        <div id="nav">
+            <a href="#" id="homeBtn">college-matcher</a>    
         
         <div id="growTree">
         </div>
         
         <div id="welcome" class="card">
-            <h1>Welcome to College Matcher</h1>
+            <h1>Welcome to college-matcher</h1>
             
             <br><br>
             
@@ -120,6 +123,7 @@
                     <label for="pref_state" class="col-sm-4 col-form-label">Preferred State</label>
                     <div class="col-sm-8">
                         <select class="selectpicker" data-live-search="true" title="Choose one" id="pref_state">
+                            <option>None</option>
                             <option>Alabama</option>
                             <option>Alaska</option>
                             <option>Arizona </option>
@@ -244,23 +248,24 @@
                         <a href="https://www.16personalities.com/free-personality-test" target="_blank">Myers Briggs Personaltiy Type</a>
                     </label>
                     <div class="col-sm-8">
-                        <select class="selectpicker" data-live-search="true" title="Choose one" id="personality" name="personality">
-                            <option>INFP</option>
-                            <option>INFJ</option>
-                            <option>INTJ</option>
-                            <option>INTP</option>
-                            <option>ISFJ</option>
-                            <option>ISFP</option>
-                            <option>ISTJ</option>
-                            <option>ISTP</option>
-                            <option>ENFJ</option>
-                            <option>ENFP</option>
-                            <option>ENTJ</option>
-                            <option>ENTP</option>
-                            <option>ESFJ</option>
-                            <option>ESTP</option>
-                            <option>ESTJ</option>
-                            <option>ESFP</option>
+                        <select class="selectpicker" data-live-search="true" title="Choose one" id="personality">
+                            <option> val="none>None</option>
+                            <option val="INFP">INFP</option>
+                            <option val="INFJ">INFJ</option>
+                            <option val="INTJ">INTJ</option>
+                            <option val="INTP">INTP</option>
+                            <option val="ISFJ">ISFJ</option>
+                            <option val="ISFP">ISFP</option>
+                            <option val="ISTJ">ISTJ</option>
+                            <option val="ISTP">ISTP</option>
+                            <option val="ENFJ">ENFJ</option>
+                            <option val="ENFP">ENFP</option>
+                            <option val="ENTJ">ENTJ</option>
+                            <option val="ENTP">ENTP</option>
+                            <option val="ESFJ">ESFJ</option>
+                            <option val="ESTP">ESTP</option>
+                            <option val="ESTJ">ESTJ</option>
+                            <option val="ESFP">ESFP</option>
                         </select>
                     </div>
                 </div>
@@ -270,6 +275,8 @@
                 <input type="submit" id="submitForm" value="Submit">
             </form>
         </div>
+    </div>
+        
     </div>
 
 </body>

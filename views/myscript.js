@@ -113,23 +113,42 @@ $('#crystal').mouseenter(function(evt){
 
 });//end crystal mouse enter function
 
-$("#buttonContainer").click(function(){
-    console.log("I clicked the arrow");
-    $("#startAnimation").fadeOut("fast");
-    $("#home").fadeIn("slow");
-});
+    $("#buttonContainer").click(function(){
+        console.log("I clicked the arrow");
+        $("#startAnimation").fadeOut("fast");
+        $("#home").fadeIn("slow");
+    });
+
+    $("#toForm").click(function(){
+        console.log("Switched to form");
+        $("#welcome").fadeOut("fast");
+        $("#form").fadeIn("slow");
+    });
+
+    $("#tuition").slider({});
+
+    $("#pref_state").on('change', function(){
+        if($("#personality").val() === ""){
+           $("#personality").prop('disabled',true);
+        } 
+        else if($("#pref_state").val() == "None") {
+            $("#personality").prop('disable', false);
+        }
+    });
     
-/*$("#toForm").hover(function(){
-    console.log("Tree gif should be running");
-    $("#growTree").fadeIn("slow");
-})*/
-    
-$("#toForm").click(function(){
-    console.log("Switched to form");
-    $("#welcome").fadeOut("fast");
-    $("#form").fadeIn("slow");
-});
-    
-$("#tuition").slider({});
+    $("#personality").on('change', function(){
+        if($("#pref_state").val() === ""){
+           $("#pref_state").prop('disabled',true);
+        } 
+        else if($("#personality").val() == "None"){
+            $("#pref_state").prop('disable', false);
+        }
+    });
+
+    $("#submitForm").click(function(){
+        console.log("Switched to result");
+        $("#form").fadeOut("fast");
+        $("#result").fadeIn("slow");
+    });
     	
 });//end document ready

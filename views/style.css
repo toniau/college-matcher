@@ -79,29 +79,55 @@ body {
 	}
 }
 
+/* -- END OF CYSTAL BALL ANIMATION -- */
+
+#nav {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    background-color: #FFF;
+    top: 0;
+    z-index: 1000;
+}
+
+#homeBtn {
+    font-family: 'Oswald', sans-serif;
+    float: left;
+    color: black;
+    border-style: solid;
+    border-width: thin;
+    border-color: #333;
+    font-size: 2em;
+    padding: 0 6px;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
 #home {
     display: none;
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
-    top: 0;
     z-index: 10;
 }
 
 .background-3 {
- 
- background-image: linear-gradient(#8b9da9, #fff6e4);
- box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+    /*background-image: linear-gradient(#8b9da9, #fff6e4);
+    box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);*/
+    background: url(waterbg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
 }
 
 .card {
     font-family: 'Raleway', sans-serif; 
+    position: relative;
     height: 350px;
     width: 700px;
     padding: 10px;
     top: 50%;
     left: 50%;
-    margin-top: -175px;
+    margin-top: 120px;
     margin-left: -350px;
     text-align: center;
     border-radius: 20px;
@@ -119,7 +145,7 @@ body {
     padding: 10px;
     top: 50%;
     left: 50%;
-    margin-top: -225px;
+    margin-top: 100px;
     margin-left: -350px;
     text-align: center;
     border-radius: 20px;
@@ -131,7 +157,7 @@ body {
 }
 
 #welcome {
-    position: absolute;
+    position: relative;
 }
 
 #welcome p {
@@ -178,4 +204,11 @@ body {
 }
 #range .slider-handle {
 	background: #0e8e7c;
+}
+
+#result {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }

@@ -3,6 +3,32 @@ body {
     background-color: #f5dd56;
 }
 
-#results {
+#dbsux {
     text-align: center;
+}
+
+button.accordion {
+    background-color: #eee;
+    color: #333;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+}
+
+div.panel.show {
+    display: block;
 }
