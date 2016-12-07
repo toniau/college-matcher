@@ -36,7 +36,7 @@ app.get('/result',function(req,res){
 
 
     if(req.query['major'] != ''){
-        where_major = 'Program_Name LIKE "%' + req.query['major'] + '%"'
+        where_major = 'AND a.Program_Name LIKE "%' + req.query['major'] + '%"'
         console.log(where_major);
     }
 
@@ -76,7 +76,7 @@ app.get('/result',function(req,res){
 
         var complete_WHERE = '';
 
-        var this_query = 'SELECT a.Institution_Name as INSTNM, a.Institution_State as STABBR, TUITION1 AS INSTATE, (TUITION3*1.5) AS OUTSTATE FROM Accreditation2 a, CollegeTuitions b WHERE (a.Institution_IPEDS_UnitID=b.UNITID) '
+        var this_query = 'SELECT DISTINCT a.Institution_Name as INSTNM, a.Institution_State as STABBR, TUITION1 AS INSTATE, (TUITION3*1.5) AS OUTSTATE FROM Accreditation2 a, CollegeTuitions b WHERE (a.Institution_IPEDS_UnitID=b.UNITID) '
 
         if(req.query['major'] == ''){
 
@@ -119,13 +119,17 @@ app.get('/result',function(req,res){
 
             if(req.query['pref_state'] != '' && (req.query['res_state'] != '')){
 
-                complete_WHERE = 'AND (' + where_pref_state + ' OR ' + where_res_state + ') AND ' + where_major;
+                complete_WHERE = 'AND (' + where_pref_state + ' OR ' + where_res_state + ') ' + where_major;
 
-            }else if(req.query['res_state'] == ''){
+            }else if(req.query['pref_state'] != '' && (req.query['res_state'] == '')){
 
-                complete_WHERE = 'AND (' + where_pref_state + ') AND ' + where_major;
+                complete_WHERE = 'AND (' + where_pref_state + ') ' + where_major;
 
-            }else if(req.query['pref_state'] == ''){
+            }else if(req.query['pref_state'] == '' && (req.query['res_state'] != '')){
+
+                complete_WHERE = 'AND (' + where_res_state + ') ' + where_major;
+
+            }else if(req.query['pref_state'] == '' && req.query['res_state'] == ''){
 
                 complete_WHERE = where_major;
                 console.log("FUUUUUUUHHHHH DISSSS\n");
