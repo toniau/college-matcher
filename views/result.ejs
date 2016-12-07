@@ -38,9 +38,7 @@
                         
                         <table class="table">
                             <tr>
-                                <th rowspan="3"><span class="percentage"><%- JSON.stringify(results[result].match_rate * 100, function(key, val){
-                                        return val.toFixed ? Number(val.toFixed(2)) : val;
-                                    }) %>%</span></th>
+                                <th rowspan="3"><span class="percentage"><%- JSON.stringify(results[result].match_rate * 100 %> %</span></th>
                                 <td>State: <%- JSON.stringify(results[result].pref_state) %></td>
                             </tr>
                             <tr>
