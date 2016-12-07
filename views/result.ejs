@@ -9,6 +9,7 @@
         <!-- CSS -->
         <link href="result.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
         
         <!-- JS -->
         <script type="text/javascript" src="ejs.min.js"></script>
@@ -24,7 +25,7 @@
         
             <% for (var result in results){ %>
             
-                <button class="accordion"><%- JSON.stringify(results[result].instnm) %></button>
+                <button class="accordion"><%- JSON.stringify(results[result].instnm) %><i class="icon ion-plus-round plus"></i></button>
                 <div class="panel">
                   <ul>
                     <li>State: <%- JSON.stringify(results[result].pref_state) %></li>

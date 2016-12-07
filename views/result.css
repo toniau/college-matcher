@@ -7,6 +7,11 @@ ul {
     list-style-type: none;
 }
 
+.plus {
+    float: right;
+    padding-right: 10px;
+}
+
 button.accordion {
     font-family: 'Oswald', sans-serif;
     background-color: #eee;
