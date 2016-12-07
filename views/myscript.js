@@ -129,19 +129,23 @@ $('#crystal').mouseenter(function(evt){
 
     $("#pref_state").on('change', function(){
         if($("#personality").val() === ""){
-           $("#personality").prop('disabled',true);
+            $("#personality").prop('disabled',true);
+            document.getElementById("personality").style.cursor = none;
         } 
-        else if($("#pref_state").val() == "None") {
+        else if($("#pref_state").val() === "None") {
             $("#personality").prop('disable', false);
+            document.getElementById("personality").style.cursor = pointer;
         }
     });
     
     $("#personality").on('change', function(){
         if($("#pref_state").val() === ""){
-           $("#pref_state").prop('disabled',true);
+            $("#pref_state").prop('disabled',true);
+            document.getElementById("pref_state").style.cursor = none;
         } 
-        else if($("#personality").val() == "None"){
+        else if($("#personality").val() === "None"){
             $("#pref_state").prop('disable', false);
+            document.getElementById("pref_state").style.cursor = pointer;
         }
     });
 
