@@ -18,6 +18,14 @@
     </head>
     
     <body>
+        
+        <script>
+            Number.prototype.toFixedDown = function(digits) {
+              var n = this - Math.pow(10, -digits)/2;
+              n += n / Math.pow(2, 53); // added 1360765523: 17.56.toFixedDown(2) === "17.56"
+              return n.toFixed(digits);
+            }
+        </script>
 
         <div id="dbsux">
             
@@ -30,7 +38,7 @@
                         
                         <table class="table">
                             <tr>
-                                <th rowspan="3"><span style="color:#5555ec;"><%- JSON.stringify(results[result].match_rate * 10) %></span></th>
+                                <th rowspan="3"><span class="percentage"><%- JSON.stringify(results[result].match_rate * 100) %>.toFixed(2) %</span></th>
                                 <td>State: <%- JSON.stringify(results[result].pref_state) %></td>
                             </tr>
                             <tr>

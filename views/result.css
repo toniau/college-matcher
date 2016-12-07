@@ -41,6 +41,9 @@ div.panel.show {
 
 .table {
     width: 100%;
-    border: 1px solid black;
     border-collapse: collapse;
+}
+
+.percentage {
+    color:#7272fc;
 }
