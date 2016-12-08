@@ -56,6 +56,7 @@ app.get('/result',function(req,res){
         var long_query = 'SELECT b.INSTNM, b.STABBR, c.TUITION1 as INSTATE, (c.TUITION3*1.5) AS OUTSTATE, (b.DIVISOR/a.MB_TYPE_SCORE)*100 AS MATCH_RATE FROM Personality a, HigherEducation3 b, CollegeTuitions c WHERE a.MB_TYPE = "' + personality_type + '" AND (a.MB_TYPE_SCORE = b.P_SCORE) AND b.UNITID=c.UNITID GROUP BY b.INSTNM HAVING MATCH_RATE < 95 ORDER BY MATCH_RATE DESC LIMIT 5;';
 
         db.query(long_query, function(err, result) {
+        	if (err) throw err;
             for(var i=0; i < result.length; i++){
                 return_set.push(
                         { 
@@ -94,6 +95,7 @@ app.get('/result',function(req,res){
             console.log(complete_query);
 
             db.query(complete_query, function(err, result) {
+            	if (err) throw err;
                 for(var i=0; i < result.length; i++){
                     return_set.push(
                             { 
@@ -141,6 +143,7 @@ app.get('/result',function(req,res){
             console.log(complete_query);
 
                 db.query(complete_query, function(err, result) {
+                	if (err) throw err;
                     for(var i=0; i < result.length; i++){
                         return_set.push(
                                 { 
